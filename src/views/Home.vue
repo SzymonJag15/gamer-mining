@@ -1,21 +1,25 @@
 <template>
-  <div>{{ test }}</div>
+  <div>{{ HeroTitle }}</div>
+  <img :src="ArrowDown" alt="Arrow down" />
 </template>
 
 <script>
 import { ref, onMounted } from "vue";
 
+import ArrowDown from "@/assets/icons/arrow-down.svg";
+
 export default {
   name: "Home",
   setup() {
-    const test = ref("asdasd");
+    const HeroTitle = ref("GamerHash");
 
     onMounted(() => {
-      console.log(test.value);
+      console.log(HeroTitle);
     });
 
     return {
-      test,
+      HeroTitle,
+      ArrowDown,
     };
   },
 };
