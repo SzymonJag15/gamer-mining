@@ -1,18 +1,22 @@
 <template>
-  <div>Home</div>
+  <div>{{ test }}</div>
 </template>
 
 <script>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   setup() {
-    const test = ref('asdasd');
+    const test = ref("asdasd");
 
     onMounted(() => {
-      console.log(test.value)
+      console.log(test.value);
     });
-  }
+
+    return {
+      test,
+    };
+  },
 };
 </script>
