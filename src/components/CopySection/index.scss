@@ -1,0 +1,40 @@
+.CopySection {
+  display: flex;
+  flex-direction: column-reverse;
+  grid-gap: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position: relative;
+    margin-top: -77px;
+    padding-top: 0;
+    z-index: 1;
+  }
+
+  @media (min-width: 1366px) {
+    grid-gap: 80px;
+  }
+
+  &__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: $dark-title-text;
+    line-height: 40px;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-size: 18px;
+    color: #737373;
+    margin-bottom: 0;
+
+    &--bold {
+      font-weight: 600;
+      color: #2C3138;
+    }
+  }
+}
