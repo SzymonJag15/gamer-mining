@@ -1,0 +1,12 @@
+.AppButton {
+  height: 48px;
+  min-width: 75px;
+  border: 1px solid #737373;
+  border-radius: 5px;
+  background-color: transparent;
+
+  font-size: 14px;
+  color: $gray-title-text;
+  text-align: center;
+  cursor: pointer;
+}
