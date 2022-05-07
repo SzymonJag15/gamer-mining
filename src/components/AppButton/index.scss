@@ -9,4 +9,15 @@
   color: $gray-title-text;
   text-align: center;
   cursor: pointer;
+
+  &--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    margin: auto;
+
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
