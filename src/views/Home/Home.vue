@@ -4,6 +4,11 @@
     <AppUiWrapper>
       <CopySection />
     </AppUiWrapper>
+    <div class="Home__calculators-bg">
+      <AppUiWrapper>
+        <CalculatorsSection />
+      </AppUiWrapper>
+    </div>
   </div>
 </template>
 
@@ -11,6 +16,7 @@
 import AppUiWrapper from "@/components/AppUiWrapper/AppUiWrapper";
 import Hero from "@/components/Hero/Hero";
 import CopySection from "@/components/CopySection/CopySection";
+import CalculatorsSection from "@/components/CalculatorsSection/CalculatorsSection";
 import ArrowDown from "@/assets/icons/arrow-down.svg";
 
 export default {
@@ -19,6 +25,7 @@ export default {
     AppUiWrapper,
     Hero,
     CopySection,
+    CalculatorsSection,
   },
   setup() {
     return {
@@ -29,8 +36,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.Home {
-  background-color: $gray-title-text;
-}
-</style>
+<style lang="scss" src="./index.scss" scoped />

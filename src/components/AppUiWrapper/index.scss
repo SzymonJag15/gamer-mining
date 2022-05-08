@@ -5,4 +5,8 @@
   @media (max-width: 1179px) {
     padding: 0 25px;
   }
+
+  &--full {
+    max-width: 100%;
+  }
 }
