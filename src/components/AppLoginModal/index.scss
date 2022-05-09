@@ -37,7 +37,7 @@
   }
 
   &__modal {
-    max-width: 420px;
+    width: 100%;
     padding: 40px 20px;
     background-color: $gray-title-text;
     border-radius: 10px;
@@ -45,8 +45,8 @@
     text-align: center;
     margin: auto;
 
-    &-wrapper {
-      width: 100%;
+    @media (min-width: 480px) {
+      width: 420px;
     }
 
     &__bottom-content {

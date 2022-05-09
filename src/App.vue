@@ -1,7 +1,10 @@
 <template>
-  <Header @show-log-in-modal="showLoginForm" />
+  <Header @show-log-in-modal="toggleLoginForm" />
   <router-view></router-view>
-  <AppLoginModal :is-visible="loginFormVisibility" />
+  <AppLoginModal
+    :is-visible="loginFormVisibility"
+    @hide-modal="toggleLoginForm"
+  />
 </template>
 
 <script>
@@ -17,10 +20,11 @@ export default {
   setup() {
     const loginFormVisibility = ref(false);
 
-    const showLoginForm = () => (loginFormVisibility.value = true);
+    const toggleLoginForm = () =>
+      (loginFormVisibility.value = !loginFormVisibility.value);
 
     return {
-      showLoginForm,
+      toggleLoginForm,
       loginFormVisibility,
     };
   },

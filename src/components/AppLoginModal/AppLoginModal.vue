@@ -1,5 +1,5 @@
 <template>
-  <div class="AppLoginModal" v-if="isVisible">
+  <div class="AppLoginModal" v-if="isVisible" @click.self="$emit('hide-modal')">
     <div class="AppLoginModal__modal-wrapper">
       <p class="AppLoginModal__title">Log In</p>
       <div class="AppLoginModal__modal">
@@ -123,7 +123,6 @@ export default {
 
     const onSubmit = () => {
       validations.value.$touch();
-      console.log(form);
     };
 
     return {
@@ -132,20 +131,6 @@ export default {
       onSubmit,
     };
   },
-  // validations() {
-  //   return {
-  //     form: {
-  //       emailName: {
-  //         required,
-  //         min: minLength(6),
-  //       },
-  //       password: {
-  //         required,
-  //         min: minLength(6),
-  //       },
-  //     },
-  //   };
-  // },
 };
 </script>
 
