@@ -80,6 +80,8 @@ import { reactive, watch, toRef } from "vue";
 import useVuelidate from "@vuelidate/core";
 import { required, minLength } from "@vuelidate/validators";
 
+import { sendLoginForm } from "@/utils/login.js";
+
 export default {
   name: "AppLoginModal",
   props: {
@@ -121,8 +123,14 @@ export default {
       password: toRef(form, "password"),
     });
 
-    const onSubmit = () => {
+    const onSubmit = async () => {
       validations.value.$touch();
+
+      try {
+        await sendLoginForm({ form });
+      } catch (error) {
+        console.log(error);
+      }
     };
 
     return {
