@@ -1,7 +1,7 @@
 <template>
   <div class="Header">
     <img :src="Logo" alt="Logotype" />
-    <AppButton text="Log in" @click="showLogInModal" />
+    <AppButton text="Log in" @click="$emit('show-log-in-modal')" />
   </div>
 </template>
 
@@ -15,13 +15,8 @@ export default {
     AppButton,
   },
   setup() {
-    const showLogInModal = () => {
-      console.log("Log in");
-    };
-
     return {
       Logo,
-      showLogInModal,
     };
   },
 };
