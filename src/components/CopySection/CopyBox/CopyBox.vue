@@ -41,9 +41,9 @@ export default {
     code: String,
   },
   setup() {
-    const copyCode = async (mytext) => {
+    const copyCode = async (text) => {
       try {
-        await navigator.clipboard.writeText(mytext);
+        await navigator.clipboard.writeText(text);
       } catch ($e) {
         console.log("Cannot copy");
       }
