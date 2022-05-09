@@ -13,6 +13,11 @@
     max-width: 480px;
   }
 
+  @media (min-width: 992px)  {
+    margin-right: auto;
+    margin-left: unset;
+  }
+
   &__circle-anim {
     margin-bottom: 20px;
   }
