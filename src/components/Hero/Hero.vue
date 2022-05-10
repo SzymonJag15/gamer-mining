@@ -21,7 +21,7 @@
           :src="ArrowDown"
           alt="Arrow down"
           class="Hero__content-bottom__arrow-down"
-          @click="scrollToNextSection"
+          @click="$emit('scroll-to')"
         />
       </div>
     </div>
@@ -58,15 +58,10 @@ export default {
       },
     ];
 
-    const scrollToNextSection = () => {
-      console.log("scroll");
-    };
-
     return {
       MiningHero,
       HERO_TITLES,
       ArrowDown,
-      scrollToNextSection,
     };
   },
 };
