@@ -1,36 +1,39 @@
 <template>
   <div class="AppSelect">
-    <Select2
-      :options="options"
-      @select="selectEvent($event)"
-      :settings="{
-        width: '355px',
-        minimumResultsForSearch: Infinity,
-      }"
-    />
+    <Multiselect :options="options" :canClear="false">
+      <template v-slot:singlelabel="{ value }">
+        <AppSelectItem :option="value" isSelect />
+      </template>
+
+      <template v-slot:option="{ option }">
+        <AppSelectItem :option="option" />
+      </template>
+    </Multiselect>
   </div>
 </template>
 <script>
-import Select2 from "vue3-select2-component";
+import { onMounted } from "vue";
+import Multiselect from "@vueform/multiselect";
+
+import AppSelectItem from "@/components/AppSelect/AppSelectItem/AppSelectItem";
 
 export default {
   name: "AppSelect",
   components: {
-    Select2,
+    Multiselect,
+    AppSelectItem,
   },
   props: {
     options: Array,
   },
-  setup() {
-    const selectEvent = (e) => {
-      console.log(e);
-    };
+  setup(props) {
+    onMounted(() => {
+      console.log(props.options);
+    });
 
-    return {
-      selectEvent,
-    };
+    return {};
   },
 };
 </script>
 
-<style lang="scss" src="./index.scss" scoped />
+<style src="@vueform/multiselect/themes/default.css" scope />

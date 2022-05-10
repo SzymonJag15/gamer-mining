@@ -18,17 +18,19 @@
       </p>
     </div>
 
-    <AppSelect
-      v-model="value"
-      :options="options"
-      :settings="{ dropdownAutoWidth: true }"
-    />
+    <div class="SelectSection__select-wrapper">
+      <AppSelect v-model="value" :options="options" />
+    </div>
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
 import AppSelect from "@/components/AppSelect/AppSelect";
+
+import BTCIcon from "@/assets/icons/btc-icon.svg";
+import ETCIcon from "@/assets/icons/etc-icon.svg";
+import LTCIcon from "@/assets/icons/ltc-icon.svg";
 
 export default {
   name: "SelectSection",
@@ -39,24 +41,34 @@ export default {
     const value = ref("");
     const options = ref([
       {
-        id: 0,
-        text: "bitcoin (BTC) 0.48 BTC 3 925.36 USD",
-        icon: "https://www.google.com/search?q=google+icon&sxsrf=ALiCzsYasci-uZur4DVm5kCcV_Fmnq5Nfw:1652001115913&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjRxrrdx8_3AhXlxIsKHTPgAmwQ_AUoAXoECAIQAw&biw=1920&bih=923&dpr=1#imgrc=3oyZ-6cHaTuISM",
-        selected: true,
+        value: "btc",
+        name: "bitcoin (BTC)",
+        btc: "0.48 BTC",
+        usd: "3 925.36 USD",
+        icon: BTCIcon,
       },
       {
-        id: 1,
-        text: "GUSD 0.48 BTC 3 925.36 USD",
+        value: 1,
+        name: "GUSD",
+        btc: "0.48 BTC",
+        usd: "3 925.36 USD",
+        icon: ETCIcon,
       },
       {
-        id: 2,
-        text: "litecoin (LTC) 0.48 BTC 3 925.36 USD",
+        value: 2,
+        name: "litecoin (LTC)",
+        btc: "0.48 BTC",
+        usd: "3 925.36 USD",
+        icon: LTCIcon,
       },
     ]);
 
     return {
       value,
       options,
+      BTCIcon,
+      ETCIcon,
+      LTCIcon,
     };
   },
 };
