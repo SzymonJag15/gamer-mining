@@ -1,5 +1,7 @@
 <template>
-  <div class="Hero">
+  <div class="Hero" :class="{ 'Hero--top': switchStatus }">
+    <AppSwitch v-model:checked="switchStatus" />
+
     <div class="Hero__content">
       <div class="Hero__content-image">
         <img :src="MiningHero" alt="Hero title" class="Hero__image-text" />
@@ -29,6 +31,9 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
+import AppSwitch from "@/components/AppSwitch/AppSwitch";
 import HeroIconTitle from "@/components/Hero/HeroIconTitle/HeroIconTitle.vue";
 
 import MiningHero from "@/assets/mining-hero.png";
@@ -40,6 +45,7 @@ import ArrowDown from "@/assets/icons/arrow-down.svg";
 export default {
   name: "Hero",
   components: {
+    AppSwitch,
     HeroIconTitle,
   },
   setup() {
@@ -57,11 +63,13 @@ export default {
         icon: BuyIcon,
       },
     ];
+    const switchStatus = ref(false);
 
     return {
       MiningHero,
       HERO_TITLES,
       ArrowDown,
+      switchStatus,
     };
   },
 };
