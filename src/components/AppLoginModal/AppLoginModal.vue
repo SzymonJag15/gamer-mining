@@ -106,7 +106,6 @@ export default {
       "The password requires an uppercase, lowercase, number and special character";
     const passwordRegExp = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/;
 
-    const validations = useVuelidate();
     const form = reactive({
       emailName: "",
       password: "",
@@ -132,8 +131,6 @@ export default {
     });
 
     const onSubmit = async () => {
-      validations.value.$touch();
-
       try {
         await sendLoginForm({ form });
       } catch (error) {
