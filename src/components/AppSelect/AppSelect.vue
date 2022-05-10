@@ -12,7 +12,6 @@
   </div>
 </template>
 <script>
-import { onMounted } from "vue";
 import Multiselect from "@vueform/multiselect";
 
 import AppSelectItem from "@/components/AppSelect/AppSelectItem/AppSelectItem";
@@ -25,13 +24,6 @@ export default {
   },
   props: {
     options: Array,
-  },
-  setup(props) {
-    onMounted(() => {
-      console.log(props.options);
-    });
-
-    return {};
   },
 };
 </script>
