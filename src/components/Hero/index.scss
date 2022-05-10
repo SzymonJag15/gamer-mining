@@ -63,6 +63,7 @@
         left: 50%;
         bottom: 9%;
         transform: translateX(-50%);
+        z-index: 99;
       }
 
       @media (min-width: 992px) {
@@ -85,6 +86,7 @@
       }
 
       &__arrow-down {
+        cursor: pointer;
         margin-top: 105px;
 
         @media (min-width: 992px) {

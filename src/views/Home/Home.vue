@@ -1,8 +1,8 @@
 <template>
   <div class="Home">
-    <Hero />
+    <Hero @scroll-to="scrollToNextSection" />
     <AppUiWrapper>
-      <CopySection />
+      <CopySection ref="copySection" />
       <SelectSection />
     </AppUiWrapper>
     <div class="Home__calculators-bg">
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import AppUiWrapper from "@/components/AppUiWrapper/AppUiWrapper";
 import Hero from "@/components/Hero/Hero";
 import CopySection from "@/components/CopySection/CopySection";
@@ -31,9 +32,21 @@ export default {
     CalculatorsSection,
   },
   setup() {
+    const copySection = ref(null);
+
+    const scrollToNextSection = () => {
+      const offset = copySection.value.$el.offsetTop;
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
+    };
+
     return {
       ArrowDown,
       Hero,
+      scrollToNextSection,
+      copySection,
     };
   },
 };
