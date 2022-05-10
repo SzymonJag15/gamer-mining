@@ -78,7 +78,7 @@
 <script>
 import { reactive, watch, toRef } from "vue";
 import useVuelidate from "@vuelidate/core";
-import { required, minLength } from "@vuelidate/validators";
+import { required, minLength, helpers } from "@vuelidate/validators";
 
 import { sendLoginForm } from "@/utils/login.js";
 
@@ -102,6 +102,10 @@ export default {
       }
     );
 
+    const passwordTip =
+      "The password requires an uppercase, lowercase, number and special character";
+    const passwordRegExp = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/;
+
     const validations = useVuelidate();
     const form = reactive({
       emailName: "",
@@ -115,6 +119,10 @@ export default {
       password: {
         required,
         min: minLength(6),
+        containsPasswordRequirement: helpers.withMessage(
+          () => passwordTip,
+          (value) => passwordRegExp.test(value)
+        ),
       },
     };
 
