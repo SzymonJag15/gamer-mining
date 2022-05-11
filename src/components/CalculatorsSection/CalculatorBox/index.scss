@@ -1,0 +1,27 @@
+.CalculatorBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 280px;
+  padding: 30px 10px 20px;
+
+  background: #171A1F 0% 0% no-repeat padding-box;
+  box-shadow: -7px -7px 10px #272B3140;
+  border-radius: 10px;
+
+  &__title {
+    font-size: 18px;
+    color: $white;
+  }
+
+  &__image {
+    max-width: 150px;
+    margin: auto;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 700;
+    color: $primary-red;
+  }
+}

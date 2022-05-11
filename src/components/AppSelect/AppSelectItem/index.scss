@@ -1,0 +1,35 @@
+.AppSelectItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  &--select {
+    padding: 0 15px;
+  }
+
+  &__name-wrapper {
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+  }
+  
+  &__text {
+    font-size: 14px;
+    line-height: 1;
+
+    &--name {
+      font-weight: 600;
+      color: $dark-title-text;
+    }
+
+    &--btc {
+      font-weight: 500;
+      color: $dark-title-text;
+    }
+
+    &--usd {
+      color: #737373;
+    }
+  }
+}

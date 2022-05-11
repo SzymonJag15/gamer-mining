@@ -1,0 +1,60 @@
+.CopyBox {
+  max-width: 90%;
+  padding-top: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px #0000004D;
+  background: transparent radial-gradient(closest-side at 51% 39%, #26292E 70%, #181B1F 170%) 0% 0% no-repeat padding-box;
+  margin: auto;
+
+  @media (min-width: 768px) {
+    max-width: 480px;
+  }
+
+  @media (min-width: 992px)  {
+    margin-right: auto;
+    margin-left: unset;
+  }
+
+  &__circle-anim {
+    margin-bottom: 20px;
+  }
+
+  &__copy-wrapper {
+    text-align: center;
+    margin-bottom: 50px;
+
+    &__title {
+      font-size: 32px;
+      color: $white;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    &__text {
+      display: flex;
+      align-items: center;
+      grid-gap: 10px;
+
+      .copy-icon {
+        cursor: pointer;
+      }
+
+      .code {
+        font-size: 18px;
+        color: #737373;
+        font-style: italic;
+      }
+    }
+  }
+
+  &__add-to-meta-wrapper {
+    width: 100%;
+    padding: 20px;
+    background-color: #181B1F;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+}
+
+:root {
+  --ms-border-color: #171A1F;
+  --ms-radius: 3px;
+  --ms-ring-width: 0;
+  --ms-spinner-color: #F41F33;
+  --ms-tag-bg: #F9F9F9;
+  --ms-option-bg-selected: #F9F9F9;
+  --ms-option-bg-selected: #F9F9F9;
+  --ms-option-bg-selected-pointed: #F9F9F9;
+}
